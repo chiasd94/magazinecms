@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html ng-app="magazine_cms" ng-csp ng-controller="adminController" data-ng-init="authen()">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AdminLTE 2 | Starter</title>
+  <!-- AngularJS dependencies -->
+  <script src="lib/angular/angular.min.js"></script>
+  <script src="js/module.js"></script>
+  <script src="controller/service.js"></script>
+  <script src="controller/adminController.js"></script>
+  <script src="controller/academyController.js"></script>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="plugins/datatables/dataTables.bootstrap.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+  <style>
+    .abc2 {
+      display:none;
+    }
+  </style>
+</head>
+
+<body id="body" class="hold-transition skin-blue sidebar-mini body-hide">
+  <div class="wrapper">
+    <!-- Main Header -->
+    <header class="main-header">
+
+      <!-- Logo -->
+      <a href="index.html" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini"><b style="color: rgb(240, 145, 84)">CMS</b></span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg">Magazine<b style="color: rgb(240, 145, 84)">CMS</b></span>
+      </a>
+
+      <!-- Header Navbar -->
+      <nav class="navbar navbar-static-top" role="navigation">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+          <span class="sr-only">Toggle navigation</span>
+        </a>
+        <!-- Navbar Right Menu -->
+        <div class="navbar-custom-menu">
+          <ul class="nav navbar-nav">
+
+            <li class="dropdown user user-menu">
+              <!-- Menu Toggle Button -->
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <!-- The user image in the navbar-->
+                <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                <span class="hidden-xs" id="fullName"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <!-- The user image in the menu -->
+                <li class="user-header">
+                  <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                  <p ng-model="fullNameWithRole">
+                  </p>
+                </li>
+                <!-- Menu Body -->
+                <li class="user-body">
+                </li>
+                <!-- Menu Footer-->
+                <li class="user-footer">
+                  <div class="pull-left">
+                    <a href="#" class="btn btn-default btn-flat" ng-click="showChangPass()">Change password</a>
+                  </div>
+                  <div class="pull-right">
+                    <a href="#" class="btn btn-default btn-flat" ng-click="logout()">Sign out</a>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+
+      <!-- sidebar: style can be found in sidebar.less -->
+      <section class="sidebar">
+
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel">
+          <div class="pull-left image">
+            <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          </div>
+          <div class="pull-left info">
+            <p id="fullNameWithRole"></p>
+            <!-- Status -->
+            <a href="#" id="role"><i class="fa fa-circle text-success"></i></a>
+          </div>
+        </div>
+
+        <!-- search form (Optional) -->
+        <form action="#" method="get" class="sidebar-form">
+          <div class="input-group">
+            <input type="text" name="q" class="form-control" placeholder="Search...">
+            <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
+              </span>
+          </div>
+        </form>
+        <!-- /.search form -->
+
+        <!-- Sidebar Menu -->
+        <ul class="sidebar-menu">
+          <li class="header">HEADER</li>
+          <!-- Optionally, you can add icons to the links -->
+          <li class="treeview">
+            <a href="#"><i class="fa fa-link"></i> <span>Users</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="admin-manage-student.html">Managing Students</a></li>
+              <li><a href="admin-manage-mm.html">Managing Marketing Manager</a></li>
+              <li><a href="admin-manage-mc.html">Managing Marketing Coordinators</a></li>
+              <li><a href="admin-manage-guest.html">Managing Guests</a></li>
+            </ul>
+          </li>
+          <li class="treeview">
+            <a href="#"><i class="fa fa-link"></i> <span>Academic Year</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="admin-manage-ay.html">Managing Academic Year</a></li>
+            </ul>
+          </li>
+          <li class="treeview">
+            <a href="#"><i class="fa fa-link"></i> <span>Faculties</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="admin-manage-faculty.html">Managing Faculties</a></li>
+            </ul>
+          </li>
+        </ul>
+        <!-- /.sidebar-menu -->
+      </section>
+      <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- modal change password -->
+      <div class="modal" id="changePassModal">
+        <div class="modal-dialog" style="width: 50%;">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Change your password</h4>
+            </div>
+            <div class="modal-body">
+              <form name="changePassForm" method="post">
+                <div class="row">
+                  <div class="col-xs-12">
+                    Current password:
+                    <input type="password" name="currentPass" class="form-control" value="" placeholder="Current password" ng-model="currentPass" required>
+                    <p style="color:red" ng-if="!changePassForm.currentPass.$valid">Current password required! </p>
+                  </div>
+                </div></br>
+                <div class="row">
+                  <div class="col-xs-12">
+                    New password:
+                    <input type="password" ng-change="checkRequirePass()" name="newPass" class="form-control" value="" placeholder="New password" ng-model="newPass" required>
+                    <p style="color:red" ng-if="!changePassForm.newPass.$valid">Current password required! </p>
+                  </div>
+                </div></br>
+                <div class="row">
+                  <div class="col-xs-12">
+                    Confirm new password:
+                    <input type="password" ng-change="checkRequirePass()" name="confirmNewPass" class="form-control" value="" placeholder="Confirm new password" ng-model="confirmNewPass" required>
+                    <p style="color:red" ng-if="!changePassForm.confirmNewPass.$valid">Confirm new password required!</p>
+                    <p style="color:red" ng-if="!validConfirmPassword">Confirm password not match!</p>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <div class="modal-footer">
+              <div class="row">
+                <div class="col-xs-6">
+                  <button type="button" class="btn btn-success full-width" ng-disabled="!validConfirmPassword || !changePassForm.currentPass.$valid" ng-click="changePass()">Change password</button>
+                </div>
+                <div class="col-xs-6">
+                  <button type="button" class="btn btn-warning full-width" ng-click="closeChangePassView()">Cancel</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- modal change passwork end -->
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+          <h1>
+          Managing Academic Year
+          <small>Managing Academic Year</small>
+          </h1>
+      </section>
+
+      <!-- Main content -->
+      <section class="content" ng-controller="academyController">
+
+        <!-- Your Page Content Here -->
+        <div class="row">
+          <div class="col-md-3 col-xs-12 col-sm-12 abc1">
+            <!-- general form elements disabled -->
+
+            <div class="box box-warning">
+              <div class="box-header with-border">
+                <h3 class="box-title">Create New Academic Year</h3>
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body">
+                <form role="form">
+                  <!-- text input -->
+                  <div class="form-group">
+                    <label>Academic Year</label>
+                    <input type="text" class="form-control" placeholder="Academic Year" ng-model="academyYear">
+                  </div>
+                </form>
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary" ng-click="createAcademyYear()">Create</button>
+                <button type="button" class="btn btn-primary" ng-click="reset()">Reset</button>
+              </div>
+            </div>
+            <!-- /.box -->
+          </div>
+          <div class="col-md-3 col-xs-12 col-sm-12 abc2">
+            <!-- general form elements disabled -->
+            <div class="box box-warning">
+              <div class="box-header with-border">
+                <h3 class="box-title">Edit Academic Year</h3>
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body">
+                <form role="form">
+                  <!-- text input -->
+                  <div class="form-group">
+                    <label>Academic Year</label>
+                    <input type="text" class="form-control" placeholder="Academic Year" ng-model="editYear">
+                  </div>
+                </form>
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary" ng-click="edit()">Edit</button>
+                <button type="button" class="btn btn-primary btnBack" ng-click="showCreate()">Back</button>
+              </div>
+            </div>
+            <!-- /.box -->
+          </div>
+          <div class="col-md-9 col-sm-12 col-xs-12">
+            <div class="box">
+              <div class="box-header">
+                <h3 class="box-title">View All Academic Year</h3>
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body table-responsive no-padding">
+                <table class="box-body table table-striped">
+                <tr>
+                  <th style="width: 10px">#</th>
+                  <th>Academy Year</th>
+                  <th style="width: 30%">Action</th>
+                </tr>
+                <tr ng-repeat="y in aYear">
+                  <th scope="row">{{$index+1}}</th>
+                  <td>{{y.year}}</td>
+                  <td><a href="#" class="btn btn-default btnEdit" role="button" ng-click="showEdit($index)">Edit</a>
+                    <!-- <a href="#" class="btn btn-default btnDelete" role="button">Delete</a> -->
+                  </td>
+                </tr>
+              </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+          </div>
+          <!-- /.col -->
+          <!-- /.row -->
+        </div>
+
+      </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+      <!-- To the right -->
+      <div class="pull-right hidden-xs">
+        Anything you want
+      </div>
+      <!-- Default to the left -->
+      <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
+    </footer>
+
+    <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+    <div class="control-sidebar-bg"></div>
+  </div>
+  <!-- ./wrapper -->
+
+  <!-- REQUIRED JS SCRIPTS -->
+
+  <!-- jQuery 2.2.3 -->
+  <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+  <!-- Bootstrap 3.3.6 -->
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <!-- AdminLTE App -->
+  <!-- DataTables -->
+  <script src="plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="plugins/datatables/dataTables.bootstrap.min.js"></script>
+  <!-- SlimScroll -->
+  <script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+  <!-- FastClick -->
+  <script src="plugins/fastclick/fastclick.js"></script>
+  <!-- AdminLTE App -->
+  <script src="dist/js/app.min.js"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="dist/js/demo.js"></script>
+  <!-- page script -->
+
+  <!-- Optionally, you can add Slimscroll and FastClick plugins.
+     Both of these plugins are recommended to enhance the
+     user experience. Slimscroll is required when using the
+     fixed layout. -->
+</body>
+
+</html>

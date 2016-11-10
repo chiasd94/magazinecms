@@ -370,17 +370,17 @@ INSERT INTO `user` (`uid`, `full_name`, `dob`, `gender`, `email`, `password`, `p
 (33, 'Tran Minh Phuong', '1994-02-01', 'Male', 'phuongtran@gmail.comm', '202cb962ac59075b964b07152d234b70', 123),
 (34, 'Pham Duc Long', '1994-02-12', 'Male', 'longpd@gmail.comm', '202cb962ac59075b964b07152d234b70', 123),
 (35, 'Nguyen Minh Tam', '1994-07-20', 'Female', 'tamntm@gmail.comm', '81dc9bdb52d04dc20036dbd8313ed055', 123),
-(37, 'Dam Quang Minh', '1780-04-12', 'Male', 'thinhnd16@fsoft.com.vn', '202cb962ac59075b964b07152d234b70', 123),
+(37, 'Dam Quang Minh', '1780-04-12', 'Male', 'DamQuangMinh@gmail.com.vn', '202cb962ac59075b964b07152d234b70', 123),
 (38, 'Magazine MM', '1980-01-08', 'Male', 'magazinemm@gmail.com', '202cb962ac59075b964b07152d234b70', 123),
 (39, 'Nguyen Van Hoang', '1980-02-01', 'Male', 'hoang@gmail.com', '202cb962ac59075b964b07152d234b70', 123),
 (41, 'Nguyen Ngoc Anh', '1994-01-12', 'Female', 'ngocanh@gmail.com', '202cb962ac59075b964b07152d234b70', 123),
 (42, 'Pham Tuan Anh', '1989-10-02', 'Male', 'tuananh@gmail.com', '202cb962ac59075b964b07152d234b70', 123),
 (43, 'Do Van Phuk', '1984-01-02', 'Male', 'phucdv@gmail.com', 'd41d8cd98f00b204e9800998ecf8427e', 1234),
-(44, 'Do Van Duc', '1980-08-09', 'Male', 'thinhndgc00458@fpt.edu.vn', '202cb962ac59075b964b07152d234b70', 123),
+(44, 'Do Van Duc', '1980-08-09', 'Male', 'DucDV00458@fpt.edu.vn', '202cb962ac59075b964b07152d234b70', 123),
 (52, 'Guest account', '1990-01-01', 'Male', 'fsb-hn@gmail.com', '202cb962ac59075b964b07152d234b70', 0),
 (54, 'Thinh Nguyen', '1994-10-09', 'Male', 'thinhnd@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 123),
 (56, 'Guest account', '1990-01-01', 'Male', 'mathematic@gmail.com', '202cb962ac59075b964b07152d234b70', 0),
-(57, 'Nguyen Viet Ha', '1994-01-01', 'Male', 'ndthinh94@live.com', '202cb962ac59075b964b07152d234b70', 123);
+(57, 'Nguyen Viet Ha', '1994-01-01', 'Male', 'ndvietha94@live.com', '202cb962ac59075b964b07152d234b70', 123);
 
 -- --------------------------------------------------------
 
